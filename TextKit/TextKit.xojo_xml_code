@@ -15,7 +15,7 @@
   <PartID>1144760319</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsLetter(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsLetter(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Determines whether [t] is a letter.</SourceLine>
    <SourceLine>///</SourceLine>
    <SourceLine>/// Based on code from .NET core: </SourceLine>
@@ -26,9 +26,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -215,7 +215,7 @@
   <PartID>436086783</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function Chop(t As Text, numChars As Integer = 1) As Text</SourceLine>
+   <SourceLine>Function Chop(Extends t As Text, numChars As Integer = 1) As Text</SourceLine>
    <SourceLine>/// Removes [numChars] characters from [t].</SourceLine>
    <SourceLine>///</SourceLine>
    <SourceLine>/// If [numChars] is greater than the length of [t], "" is returned.</SourceLine>
@@ -232,9 +232,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text, numChars As Integer = 1</ItemParams>
+  <ItemParams>Extends t As Text, numChars As Integer = 1</ItemParams>
   <ItemResult>Text</ItemResult>
  </Method>
  <Method>
@@ -412,7 +412,7 @@
   <PartID>1573867519</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsBinaryDigit(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsBinaryDigit(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Returns True if [t] is `0` or `1`.</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Return If(t = "0" Or t = "1", True, False)</SourceLine>
@@ -420,9 +420,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -433,7 +433,7 @@
   <PartID>1802153983</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsDigit(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsDigit(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Returns True if [t] is a single digit in the range 0-9.</SourceLine>
    <SourceLine>///</SourceLine>
    <SourceLine>/// We could use [GetUnicodeCategory] but a `select...case` is faster.</SourceLine>
@@ -449,9 +449,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -462,7 +462,7 @@
   <PartID>2050383871</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsExactly(char As Text, ParamArray characters() As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsExactly(Extends char As Text, ParamArray characters() As Text) As Boolean</SourceLine>
    <SourceLine>/// True if [char] exactly matches (case-sensitive) any of the passed </SourceLine>
    <SourceLine>/// [characters].</SourceLine>
    <SourceLine></SourceLine>
@@ -478,9 +478,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>char As Text, ParamArray characters() As Text</ItemParams>
+  <ItemParams>Extends char As Text, ParamArray characters() As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -491,7 +491,7 @@
   <PartID>319019007</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsHexDigit(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsHexDigit(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Returns True if [t] is a valid hexadecimal digit (0-9, a-f, A-F).</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>If t.Length &lt;&gt; 1 Then Return False</SourceLine>
@@ -511,9 +511,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -549,7 +549,7 @@
   <PartID>1790048255</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsLetterDigitOrUnderscore(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsLetterDigitOrUnderscore(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Determines whether [t] is a letter, a digit or an underscore.</SourceLine>
    <SourceLine>///</SourceLine>
    <SourceLine>/// Based on code from .NET core: </SourceLine>
@@ -561,9 +561,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -574,7 +574,7 @@
   <PartID>1831878655</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsLetterOrDigit(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsLetterOrDigit(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Determines whether [t] is a letter or a digit.</SourceLine>
    <SourceLine>/// </SourceLine>
    <SourceLine>/// Based on code from .NET core: </SourceLine>
@@ -586,40 +586,40 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
   <ItemName>IsLowercaseCharacter</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
-  <CodeDescription>Returns True if [character] is lowercase.</CodeDescription>
+  <CodeDescription>Returns True if [char] is lowercase.</CodeDescription>
   <PartID>1946972159</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsLowercaseCharacter(character As Text) As Boolean</SourceLine>
-   <SourceLine>/// Returns True if [character] is lowercase.</SourceLine>
+   <SourceLine>Function IsLowercaseCharacter(Extends char As Text) As Boolean</SourceLine>
+   <SourceLine>/// Returns True if [char] is lowercase.</SourceLine>
    <SourceLine>///</SourceLine>
-   <SourceLine>/// Assumes that [character] is one character long.</SourceLine>
+   <SourceLine>/// Assumes that [char] is one character long.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>If IsLatin1(character) Then</SourceLine>
-   <SourceLine>If IsASCII(character) Then</SourceLine>
-   <SourceLine>Return Asc(character) &gt;= 97 And Asc(character) &lt;= 122</SourceLine>
+   <SourceLine>If IsLatin1(char) Then</SourceLine>
+   <SourceLine>If IsASCII(char) Then</SourceLine>
+   <SourceLine>Return Asc(char) &gt;= 97 And Asc(char) &lt;= 122</SourceLine>
    <SourceLine>End If</SourceLine>
-   <SourceLine>Return GetLatin1UnicodeCharacter(character) = UnicodeCategories.LowercaseLetter</SourceLine>
+   <SourceLine>Return GetLatin1UnicodeCharacter(char) = UnicodeCategories.LowercaseLetter</SourceLine>
    <SourceLine>End If</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Return GetUnicodeCategory(character) = UnicodeCategories.LowercaseLetter</SourceLine>
+   <SourceLine>Return GetUnicodeCategory(char) = UnicodeCategories.LowercaseLetter</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>character As Text</ItemParams>
+  <ItemParams>Extends char As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -630,7 +630,7 @@
   <PartID>518690815</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsWhiteSpace(t As Text) As Boolean</SourceLine>
+   <SourceLine>Function IsWhiteSpace(Extends t As Text) As Boolean</SourceLine>
    <SourceLine>/// Returns True if [t] is Unicode whitespace.</SourceLine>
    <SourceLine>///</SourceLine>
    <SourceLine>/// Assumes [t] is a single character. </SourceLine>
@@ -660,9 +660,9 @@
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
   <AliasName></AliasName>
-  <ItemFlags>1</ItemFlags>
+  <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>t As Text</ItemParams>
+  <ItemParams>Extends t As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>

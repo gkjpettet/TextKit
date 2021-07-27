@@ -74,40 +74,80 @@ Inherits TestGroup
 
 	#tag Method, Flags = &h0
 		Sub IsChopTest()
-		  Assert.IsTrue(TextKit.Chop("Hello", 3) = "He")
-		  Assert.IsTrue(TextKit.Chop("Test", 0) = "")
+		  Var t As Text
+		  
+		  t = "Hello"
+		  Assert.Istrue(t.Chop(3) = "He")
+		  
+		  t = "Test"
+		  Assert.Istrue(t.Chop(0) = "")
+		  
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub IsDigitTest()
-		  Assert.IsTrue(TextKit.IsDigit("1"), "1")
-		  Assert.IsTrue(TextKit.IsDigit("5"), "5")
-		  Assert.IsFalse(TextKit.IsDigit("20"), "20")
-		  Assert.IsFalse(TextKit.IsDigit("2.5"), "2.5")
-		  Assert.IsFalse(TextKit.IsDigit("4e-2"), "4e-2")
-		  Assert.IsFalse(TextKit.IsDigit("a"), "a")
-		  Assert.IsFalse(TextKit.IsDigit("😀"), "😀")
-		  Assert.IsFalse(TextKit.IsDigit("hello"), "hello")
+		  Var t As Text
+		  
+		  t = "1"
+		  Assert.IsTrue(t.IsDigit, t)
+		  
+		  t = "5"
+		  Assert.IsTrue(t.IsDigit, t)
+		  
+		  t = "20"
+		  Assert.IsFalse(t.IsDigit, t)
+		  
+		  t = "2.5"
+		  Assert.IsFalse(t.IsDigit, t)
+		  
+		  t = "4e-2"
+		  Assert.IsFalse(t.IsDigit, t)
+		  
+		  t = "a"
+		  Assert.IsFalse(t.IsDigit, t)
+		  
+		  t = "😀"
+		  Assert.IsFalse(t.IsDigit, t)
+		  
+		  t = "hello"
+		  Assert.IsFalse(t.IsDigit, t)
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub IsLetterOrDigitTest()
-		  Assert.IsTrue(TextKit.IsLetterOrDigit("a"), "a")
-		  Assert.IsTrue(TextKit.IsLetterOrDigit("é"), "é")
-		  Assert.IsTrue(TextKit.IsLetterOrDigit("1"), "1")
-		  Assert.IsFalse(TextKit.IsLetterOrDigit("😀"), "😀")
+		  Var t As Text
+		  
+		  t = "a"
+		  Assert.IsTrue(t.IsLetterOrDigit, t)
+		  
+		  t = "é"
+		  Assert.IsTrue(t.IsLetterOrDigit, t)
+		  
+		  t = "1"
+		  Assert.IsTrue(t.IsLetterOrDigit, t)
+		  
+		  t = "😀"
+		  Assert.IsFalse(t.IsLetterOrDigit, t)
+		  
+		  t = "☺️"
+		  Assert.IsFalse(t.IsLetterOrDigit, t)
 		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
 		Sub IsLetterTest()
-		  Assert.IsTrue(TextKit.IsLetter("a"), "a")
-		  Assert.IsFalse(TextKit.IsLetter("😀"), "😀")
+		  Var t As Text
+		  
+		  t = "a"
+		  Assert.IsTrue(t.IsLetter, t)
+		  
+		  t = "😀"
+		  Assert.IsFalse(t.IsLetter, t)
 		  
 		End Sub
 	#tag EndMethod
