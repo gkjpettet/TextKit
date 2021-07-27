@@ -691,6 +691,42 @@
   <ItemParams>t As Text</ItemParams>
   <ItemResult>Text</ItemResult>
  </Method>
+ <Method>
+  <ItemName>ReplaceLineEndings</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>Replaces all lines endings in [t] with [other].</CodeDescription>
+  <PartID>2087307263</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function ReplaceLineEndings(Extends t As Text, other As Text) As Text</SourceLine>
+   <SourceLine>/// Replaces all lines endings in [t] with [other].</SourceLine>
+   <SourceLine>///</SourceLine>
+   <SourceLine>/// Thanks to Kem Tekinay:</SourceLine>
+   <SourceLine>/// https://forum.xojo.com/t/replacelineendings-in-new-framework-what-is-best-way/28765/7</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Const kCR As Text = &amp;u0D</SourceLine>
+   <SourceLine>Const kLF As Text = &amp;u0A</SourceLine>
+   <SourceLine>Const kCRLF As Text = &amp;u0D + &amp;u0A</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Normalise the line endings first.</SourceLine>
+   <SourceLine>t = t.ReplaceAll( kCRLF, kLF )</SourceLine>
+   <SourceLine>t = t.ReplaceAll( kCR, kLF )</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>// Now replace them.</SourceLine>
+   <SourceLine>t = t.ReplaceAll( kLF, other )</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return t</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends t As Text, other As Text</ItemParams>
+  <ItemResult>Text</ItemResult>
+ </Method>
  <Property>
   <ItemName>CodePointCategoryDictionary</ItemName>
   <Compatibility></Compatibility>
@@ -699,7 +735,7 @@
   <PartID>1142800383</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Property CodePointCategoryDictionary As Dictionary</SourceLine>
+   <SourceLine>CodePointCategoryDictionary As Dictionary</SourceLine>
    <SourceLine></SourceLine>
   </ItemSource>
   <TextEncoding>134217984</TextEncoding>
