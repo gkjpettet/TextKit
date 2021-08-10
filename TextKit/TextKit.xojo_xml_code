@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<RBProject version="2021r2" FormatVersion="2" MinIDEVersion="20070100">
+<RBProject version="2021r2.1" FormatVersion="2" MinIDEVersion="20070100">
 <block type="Module" ID="688185343">
  <ObjName>TextKit</ObjName>
  <ObjContainerID>0</ObjContainerID>
@@ -779,6 +779,44 @@
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
   <ItemParams>Extends t As Text, start As Integer, length As Integer, newValue As Text</ItemParams>
+  <ItemResult>Text</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>Join</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>Concatenates each item in [items]. [separator] will be inserted between each item when performing the concatenation.</CodeDescription>
+  <PartID>1064456191</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Join(items() As Text, separator As Text = "") As Text</SourceLine>
+   <SourceLine>/// Concatenates each item in [items]. [separator] will be inserted between each</SourceLine>
+   <SourceLine>/// item when performing the concatenation.</SourceLine>
+   <SourceLine>///</SourceLine>
+   <SourceLine>/// If the items array is empty, an empty Text value is returned.</SourceLine>
+   <SourceLine>/// This is a workaround for the broken `Text.Join` method on Windows &amp; Linux.</SourceLine>
+   <SourceLine>/// &lt;feedback://showreport?report_id=65508&gt;</SourceLine>
+   <SourceLine>/// On macOS, we simply use `Text.Join` as it's not broken.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>#If TargetMacOS</SourceLine>
+   <SourceLine>Return Text.Join(items, separator)</SourceLine>
+   <SourceLine>#Else</SourceLine>
+   <SourceLine>If items.Count = 0 Then Return ""</SourceLine>
+   <SourceLine>Var t As Text</SourceLine>
+   <SourceLine>Var iMax As Integer = items.LastIndex</SourceLine>
+   <SourceLine>For i As Integer = 0 To iMax</SourceLine>
+   <SourceLine>t = t + items(i)</SourceLine>
+   <SourceLine>If i &lt; iMax Then t = t + separator</SourceLine>
+   <SourceLine>Next i</SourceLine>
+   <SourceLine>Return t</SourceLine>
+   <SourceLine>#EndIf</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>1</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>items() As Text, separator As Text = ""</ItemParams>
   <ItemResult>Text</ItemResult>
  </Method>
  <Property>
