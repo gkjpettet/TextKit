@@ -904,6 +904,37 @@
   <ItemParams>Extends c As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
+ <Method>
+  <ItemName>IsUppercaseCharacter</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>Returns True if [char] is uppercase.</CodeDescription>
+  <PartID>476721151</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsUppercaseCharacter(Extends char As Text) As Boolean</SourceLine>
+   <SourceLine>/// Returns True if [char] is uppercase.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If char.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If IsLatin1(char) Then</SourceLine>
+   <SourceLine>If char.IsASCIILetter Then</SourceLine>
+   <SourceLine>Return Asc(char) &gt;= 65 And Asc(char) &lt;= 90</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>Return GetLatin1UnicodeCharacter(char) = UnicodeCategories.UppercaseLetter</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return GetUnicodeCategory(char) = UnicodeCategories.UppercaseLetter</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends char As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
  <Property>
   <ItemName>CodePointCategoryDictionary</ItemName>
   <Compatibility></Compatibility>
