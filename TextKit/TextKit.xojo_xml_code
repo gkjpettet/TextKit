@@ -21,6 +21,8 @@
    <SourceLine>/// Based on code from .NET core: </SourceLine>
    <SourceLine>/// https://github.com/microsoft/referencesource/blob/master/mscorlib/system/char.cs</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>If t.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Return CheckLetter(GetUnicodeCategory(t))</SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -384,16 +386,16 @@
   <ItemName>IsASCII</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
-  <CodeDescription>Returns True if [character] is in the ASCII range.</CodeDescription>
+  <CodeDescription>Returns True if [c] is in the ASCII range.</CodeDescription>
   <PartID>1763106815</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsASCII(character As Text) As Boolean</SourceLine>
-   <SourceLine>/// Returns True if [character] is in the ASCII range.</SourceLine>
-   <SourceLine>///</SourceLine>
-   <SourceLine>/// Assumes that [character] is one character in length.</SourceLine>
+   <SourceLine>Function IsASCII(c As Text) As Boolean</SourceLine>
+   <SourceLine>/// Returns True if [c] is in the ASCII range.</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>Return character.FirstCharacterCodepoint &lt;= &amp;h007F</SourceLine>
+   <SourceLine>If c.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return c.FirstCharacterCodepoint &lt;= &amp;h007F</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
   </ItemSource>
@@ -401,7 +403,7 @@
   <AliasName></AliasName>
   <ItemFlags>1</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>character As Text</ItemParams>
+  <ItemParams>c As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
@@ -555,6 +557,8 @@
    <SourceLine>/// Based on code from .NET core: </SourceLine>
    <SourceLine>/// https://github.com/microsoft/referencesource/blob/master/mscorlib/system/char.cs</SourceLine>
    <SourceLine></SourceLine>
+   <SourceLine>If t.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
    <SourceLine>Return CheckLetterOrDigit(GetUnicodeCategory(t)) Or t = "_"</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>End Function</SourceLine>
@@ -579,6 +583,8 @@
    <SourceLine>/// </SourceLine>
    <SourceLine>/// Based on code from .NET core: </SourceLine>
    <SourceLine>/// https://github.com/microsoft/referencesource/blob/master/mscorlib/system/char.cs</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If t.Length &lt;&gt; 1 Then Return False</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Return CheckLetterOrDigit(GetUnicodeCategory(t))</SourceLine>
    <SourceLine></SourceLine>
@@ -818,6 +824,85 @@
   <IsShared>0</IsShared>
   <ItemParams>items() As Text, separator As Text = ""</ItemParams>
   <ItemResult>Text</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsLowercase</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>True if [t] is all lowercase.</CodeDescription>
+  <PartID>1170065407</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsLowercase(Extends t As Text) As Boolean</SourceLine>
+   <SourceLine>/// True if [t] is all lowercase.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return t.Compare(t.Lowercase, Text.CompareCaseSensitive) = 0</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends t As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsASCIILetter</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>Returns True if [c] is a letter in the ASCII range.</CodeDescription>
+  <PartID>1043247103</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsASCIILetter(Extends c As Text) As Boolean</SourceLine>
+   <SourceLine>/// Returns True if [c] is a letter in the ASCII range.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If c.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Select Case c.FirstCharacterCodepoint</SourceLine>
+   <SourceLine>Case 65 To 90, 97 To 122</SourceLine>
+   <SourceLine>Return True</SourceLine>
+   <SourceLine>Else</SourceLine>
+   <SourceLine>Return False</SourceLine>
+   <SourceLine>End Select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends c As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
+ <Method>
+  <ItemName>IsASCIILetterDigitOrUnderscore</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>Determines whether [c] is an ASCII letter, a digit or an underscore.</CodeDescription>
+  <PartID>1278732287</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function IsASCIILetterDigitOrUnderscore(Extends c As Text) As Boolean</SourceLine>
+   <SourceLine>/// Determines whether [c] is an ASCII letter, a digit or an underscore.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If c.Length &lt;&gt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Select Case c.FirstCharacterCodepoint</SourceLine>
+   <SourceLine>Case 48 To 57, 65 To 90, 95, 97 To 122</SourceLine>
+   <SourceLine>Return True</SourceLine>
+   <SourceLine>Else</SourceLine>
+   <SourceLine>Return False</SourceLine>
+   <SourceLine>End Select</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends c As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
  </Method>
  <Property>
   <ItemName>CodePointCategoryDictionary</ItemName>

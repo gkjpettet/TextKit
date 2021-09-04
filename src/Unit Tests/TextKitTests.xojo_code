@@ -152,6 +152,20 @@ Inherits TestGroup
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h0
+		Sub IsLowercaseTest()
+		  Var t1 As Text = "abc"
+		  Var t2 As Text = "ABC"
+		  Var t3 As Text = "axGwejH"
+		  Var t4 As Text = "Very Cool"
+		  
+		  Assert.IsTrue(t1.IsLowercase)
+		  Assert.IsFalse(t2.IsLowercase)
+		  Assert.IsFalse(t3.IsLowercase)
+		  Assert.IsFalse(t4.IsLowercase)
+		End Sub
+	#tag EndMethod
+
 
 	#tag ViewBehavior
 		#tag ViewProperty
