@@ -460,19 +460,18 @@
   <ItemName>IsExactly</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
-  <CodeDescription>True if [char] exactly matches (case-sensitive) any of the passed [characters].</CodeDescription>
+  <CodeDescription>True if [t] exactly matches (case-sensitive) any of the passed [items].</CodeDescription>
   <PartID>2050383871</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
-   <SourceLine>Function IsExactly(Extends char As Text, ParamArray characters() As Text) As Boolean</SourceLine>
-   <SourceLine>/// True if [char] exactly matches (case-sensitive) any of the passed </SourceLine>
-   <SourceLine>/// [characters].</SourceLine>
+   <SourceLine>Function IsExactly(Extends t As Text, ParamArray items() As Text) As Boolean</SourceLine>
+   <SourceLine>/// True if [t] exactly matches (case-sensitive) any of the passed [items].</SourceLine>
    <SourceLine></SourceLine>
-   <SourceLine>For Each c As Text In characters</SourceLine>
-   <SourceLine>If char.Compare(c, Text.CompareCaseSensitive) = 0 Then</SourceLine>
+   <SourceLine>For Each item As Text In items</SourceLine>
+   <SourceLine>If t.Compare(item, Text.CompareCaseSensitive) = 0 Then</SourceLine>
    <SourceLine>Return True</SourceLine>
    <SourceLine>End If</SourceLine>
-   <SourceLine>Next c</SourceLine>
+   <SourceLine>Next item</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>Return False</SourceLine>
    <SourceLine></SourceLine>
@@ -482,7 +481,7 @@
   <AliasName></AliasName>
   <ItemFlags>0</ItemFlags>
   <IsShared>0</IsShared>
-  <ItemParams>Extends char As Text, ParamArray characters() As Text</ItemParams>
+  <ItemParams>Extends t As Text, ParamArray items() As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
  <Method>
