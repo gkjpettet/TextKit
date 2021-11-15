@@ -934,6 +934,34 @@
   <ItemParams>Extends char As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
+ <Method>
+  <ItemName>Matches</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>True if [t] matches (case insensitive) any of the passed [items].</CodeDescription>
+  <PartID>1093056511</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function Matches(Extends t As Text, ParamArray items() As Text) As Boolean</SourceLine>
+   <SourceLine>/// True if [t] matches (case insensitive) any of the passed [items].</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>For Each item As Text In items</SourceLine>
+   <SourceLine>If t.Compare(item) = 0 Then</SourceLine>
+   <SourceLine>Return True</SourceLine>
+   <SourceLine>End If</SourceLine>
+   <SourceLine>Next item</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends t As Text, ParamArray items() As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
  <Property>
   <ItemName>CodePointCategoryDictionary</ItemName>
   <Compatibility></Compatibility>
