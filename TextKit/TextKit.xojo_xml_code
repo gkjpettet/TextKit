@@ -938,12 +938,12 @@
   <ItemName>Matches</ItemName>
   <Compatibility></Compatibility>
   <Visible>1</Visible>
-  <CodeDescription>True if [t] matches (case insensitive) any of the passed [items].</CodeDescription>
-  <PartID>1093056511</PartID>
+  <CodeDescription>True if [t] matches (case insensitive) any of the passed [items].&lt;/CodeDescription&gt;</CodeDescription>
+  <PartID>798730239</PartID>
   <ItemSource>
    <TextEncoding>134217984</TextEncoding>
    <SourceLine>Function Matches(Extends t As Text, ParamArray items() As Text) As Boolean</SourceLine>
-   <SourceLine>/// True if [t] matches (case insensitive) any of the passed [items].</SourceLine>
+   <SourceLine>/// True if [t] matches (case insensitive) any of the passed [items].&lt;/CodeDescription&gt;</SourceLine>
    <SourceLine></SourceLine>
    <SourceLine>For Each item As Text In items</SourceLine>
    <SourceLine>If t.Compare(item) = 0 Then</SourceLine>
