@@ -924,6 +924,29 @@
   <ItemParams>Extends t As Text, ParamArray items() As Text</ItemParams>
   <ItemResult>Boolean</ItemResult>
  </Method>
+ <Method>
+  <ItemName>BeginsWithUppercaseLetter</ItemName>
+  <Compatibility></Compatibility>
+  <Visible>1</Visible>
+  <CodeDescription>True if [t] begins with an uppercase letter.</CodeDescription>
+  <PartID>449980415</PartID>
+  <ItemSource>
+   <TextEncoding>134217984</TextEncoding>
+   <SourceLine>Function BeginsWithUppercaseLetter(Extends t As Text) As Boolean</SourceLine>
+   <SourceLine>/// True if [t] begins with an uppercase letter.</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>If t.Length &lt; 1 Then Return False</SourceLine>
+   <SourceLine></SourceLine>
+   <SourceLine>Return t.Left(1).IsUppercaseCharacter</SourceLine>
+   <SourceLine>End Function</SourceLine>
+  </ItemSource>
+  <TextEncoding>134217984</TextEncoding>
+  <AliasName></AliasName>
+  <ItemFlags>0</ItemFlags>
+  <IsShared>0</IsShared>
+  <ItemParams>Extends t As Text</ItemParams>
+  <ItemResult>Boolean</ItemResult>
+ </Method>
  <Property>
   <ItemName>CodePointCategoryDictionary</ItemName>
   <Compatibility></Compatibility>
